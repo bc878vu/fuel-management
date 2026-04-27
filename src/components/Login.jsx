@@ -6,8 +6,12 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  // 🔐 ENV VARIABLES
+  const ADMIN_EMAIL = process.env.REACT_APP_ADMIN_EMAIL;
+  const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD;
+
   const handleLogin = () => {
-    if (email === "admin@gmail.com" && password === "Asad123@@a") {
+    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
       localStorage.setItem("isAdmin", "true");
       navigate("/admin");
     } else {
@@ -56,11 +60,6 @@ export default function Login() {
           </button>
 
         </div>
-
-        {/* Hint (optional remove later) */}
-        <p className="text-xs text-gray-300 mt-4 text-center">
-          admin@gmail.com / Asad123@@a
-        </p>
 
       </div>
     </div>
