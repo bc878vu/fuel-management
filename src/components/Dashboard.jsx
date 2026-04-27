@@ -24,7 +24,7 @@ export default function Dashboard() {
       </div>
 
       {/* 🔥 SIDEBAR */}
-      <div className={`fixed md:static top-0 left-0 h-full w-64 bg-slate-900 md:bg-transparent p-5 border-r border-slate-700 transform transition-transform duration-300 z-50
+      <div className={`fixed md:static top-0 left-0 h-half w-48 bg-slate-900 md:bg-transparent p-5 border-r border-slate-700 transform transition-transform duration-300 z-50
         ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
       `}>
 
@@ -47,7 +47,17 @@ export default function Dashboard() {
           <NavBtn label="Reports" active={view === "report"} onClick={() => { setView("report"); setOpen(false); }} />
 
         </div>
-
+<div className="mt-6">
+  <button
+    onClick={() => {
+      localStorage.removeItem("isAdmin");
+      window.location.href = "/";
+    }}
+    className="w-full p-3 bg-red-600 rounded-lg hover:bg-red-700"
+  >
+    Logout
+  </button>
+</div>
       </div>
 
       {/* 🔥 OVERLAY (mobile) */}
