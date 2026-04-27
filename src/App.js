@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Dashboard from "./components/Dashboard";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Toaster
+  position="top-right"
+  toastOptions={{
+    duration: 2000,
+    style: {
+      background: "#111",
+      color: "#fff",
+      borderRadius: "10px",
+      padding: "10px 14px"
+    }
+  }}
+/>
+      <Dashboard />
+    </>
   );
 }
 

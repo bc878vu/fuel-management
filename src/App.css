@@ -2,17 +2,31 @@
   text-align: center;
 }
 
+/* 🔥 FIX: ensure text visible everywhere */
+.App * {
+  color: inherit;
+}
+
+/* 🔥 OPTIONAL: smooth UI */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 🔥 LOGO */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* 🔥 ANIMATION */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* 🔥 HEADER (NOT BREAKING EXISTING) */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,10 +38,12 @@
   color: white;
 }
 
+/* 🔥 LINKS */
 .App-link {
-  color: #61dafb;
+  color: #3b82f6;
 }
 
+/* 🔥 ANIMATION KEYFRAMES */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +51,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* 🔥 EXTRA UI IMPROVEMENTS */
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* 🔥 INPUT FOCUS */
+input:focus,
+select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
 }
